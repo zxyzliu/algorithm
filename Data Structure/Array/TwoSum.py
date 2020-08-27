@@ -18,7 +18,7 @@ def twosum(arr, s):
         if target in hash_table:
             sum.append([arr[i], target])
         hash_table[arr[i]] = arr[i]
-    return sum
+    return sum 
 
 
 print(twosum([3, 5, 2, -4, 8, 11], 7))
