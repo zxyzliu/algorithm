@@ -6,6 +6,11 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 
+
+Time complexity: Because, for each element, I try to find its complement by looping through the rest
+of array which takes O(n) time. Therefore, the time complexity is O(n^2).
+
+Space complexity：O(1)
 """
 
 
@@ -18,6 +23,8 @@ def twosum(arr, s):
         if target in hash_table:
             sum.append([arr[i], target])
         hash_table[arr[i]] = arr[i]
+
+    print(hash_table)
     return sum 
 
 
