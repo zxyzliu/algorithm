@@ -12,20 +12,29 @@ of array which takes O(n) time. Therefore, the time complexity is O(n^2).
 
 Space complexity：O(1)
 """
+from typing import List
 
 
-def twosum(arr, s):
-    sum = []
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+    result = []
     hash_table = {}
 
-    for i in range(0, len(arr)):
-        target = s - arr[i]
-        if target in hash_table:
-            sum.append([arr[i], target])
-        hash_table[arr[i]] = arr[i]
+    for i in range(0, len(nums)):
+        res = target - nums[i]
+        if res in hash_table:
+            result.extend([nums[i], res])
+        hash_table[nums[i]] = nums[i]
 
-    print(hash_table)
-    return sum 
+    # if we want to print the position
+    # for i in range(0, len(nums)):
+    #     res = target - nums[i]
+    #     if res in hash_table:
+    #         result.extend([hash_table[res], i])
+    #     hash_table[nums[i]] = i
+
+    return result
 
 
-print(twosum([3, 5, 2, -4, 8, 11], 7))
+print(twoSum(any, [3, 5, 2, -4, 8, 11], 7))
+
+
